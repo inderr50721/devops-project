@@ -12,31 +12,33 @@ function App() {
 
   return (
     <div style={styles.container}>
-      
-      <h1 style={styles.heading}>
-        DevOps Dashboard 🚀
-      </h1>
+
+      <div style={styles.navbar}>
+        <h2>DevOps Dashboard</h2>
+      </div>
+
+      <h1 style={styles.heading}>System Overview 🚀</h1>
 
       {data ? (
-        <div style={styles.cardContainer}>
+        <div style={styles.grid}>
 
           <div style={styles.card}>
-            <h2>Services</h2>
+            <h3>Services</h3>
             <p>{data.services}</p>
           </div>
 
           <div style={styles.card}>
-            <h2>Containers</h2>
+            <h3>Containers</h3>
             <p>{data.containers}</p>
           </div>
 
           <div style={styles.card}>
-            <h2>CPU Usage</h2>
+            <h3>CPU Usage</h3>
             <p>{data.cpu}</p>
           </div>
 
           <div style={styles.card}>
-            <h2>Memory</h2>
+            <h3>Memory Usage</h3>
             <p>{data.memory}</p>
           </div>
 
@@ -53,25 +55,32 @@ const styles = {
   container: {
     backgroundColor: "#0f172a",
     color: "white",
-    height: "100vh",
-    padding: "20px",
+    minHeight: "100vh",
     fontFamily: "Arial"
   },
-  heading: {
-    textAlign: "center"
+  navbar: {
+    background: "#1e293b",
+    padding: "15px",
+    textAlign: "center",
+    fontSize: "20px"
   },
-  cardContainer: {
-    display: "flex",
-    justifyContent: "space-around",
-    marginTop: "40px"
+  heading: {
+    textAlign: "center",
+    marginTop: "20px"
+  },
+  grid: {
+    display: "grid",
+    gridTemplateColumns: "repeat(4, 1fr)",
+    gap: "20px",
+    padding: "40px"
   },
   card: {
-    backgroundColor: "#1e293b",
+    background: "#1e293b",
     padding: "20px",
     borderRadius: "12px",
-    width: "160px",
     textAlign: "center",
-    boxShadow: "0 4px 10px rgba(0,0,0,0.5)"
+    boxShadow: "0 4px 10px rgba(0,0,0,0.5)",
+    transition: "0.3s"
   }
 };
 
